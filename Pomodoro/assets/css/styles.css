@@ -1,0 +1,261 @@
+#work-space {
+  height: 566px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* Blocks */
+  #timer_clock {
+    background-color: #ffffff;
+    border-color: transparent;
+    height: 209px;
+    width: 445px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #p_time {
+    font-size: 160px;
+    text-align: center;
+  }
+  #controls {
+    height: 87.1px;
+    background-color: #ffffff;
+    border-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+/* End Blocks */
+
+/* Buttons */
+  #start_button,
+  #reset_button, 
+  #pause_button, 
+  #continue_button {
+    margin-right: 10px;
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+/* End Buttons */
+
+/* FULLSCREEN */
+  @media only screen and (max-width: 1200px) {
+    #timer_clock {
+      width: 445px;
+      height: 209.1px;
+    }
+    #p_time {
+      font-size: 160px;
+    }
+  }
+  /* IPAD */
+    @media only screen and (max-width: 1024px) {
+      #timer_clock {
+        width: 210px;
+        height: 70px;
+      }
+      #controls {
+        width: 210px;
+        height: 70px;
+        display: flex;
+        padding-left: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      #p_time {
+        margin-top: 30px;
+        font-size: 70px!important;
+      }
+      /* Buttons */
+        #start_button,
+        #reset_button, 
+        #pause_button, 
+        #continue_button {
+          height: 30px;
+          width: 80px;
+          font-size: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      /* End Buttons */
+    }
+  /* END IPAD */
+/* END FULLSCREEN */
+
+/* LAPTOP */
+  @media only screen and (max-width: 992px) {
+    #timer_clock {
+      width: 210px;
+      height: 70px;
+    }
+    #controls {
+      width: 210px;
+      height: 70px;
+      display: flex;
+      padding-left: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    #p_time {
+      margin-top: 30px;
+      font-size: 70px!important;
+    }
+    /* Buttons */
+      #start_button,
+      #reset_button, 
+      #pause_button, 
+      #continue_button {
+        height: 30px;
+        width: 80px;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    /* End Buttons */
+  }
+/* END LAPTOP */
+
+/* TABLET */
+  @media only screen and (max-width: 768px) {
+    #timer_clock {
+      width: 240px;
+      height: 70px;
+    }
+    #controls {
+      width: 240px;
+      height: 90px;
+      display: flex;
+    }
+    #p_time {
+      margin-top: 30px;
+      font-size: 70px!important;
+    }
+    /* Buttons */
+      #start_button,
+      #reset_button, 
+      #pause_button, 
+      #continue_button {
+        height: 40px;
+        width: 80px;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    /* End Buttons */
+  }
+
+  @media only screen and (max-width: 576px) {
+    #timer {
+      width: 600px;
+      height: 200px;
+    }
+    #timer_clock {
+      width: 530px;
+      height: 110px;
+    }
+    #controls {
+      width: 530px;
+      height: 90px;
+      display: flex;
+    }
+    #p_time {
+      margin-top: -45px;
+      font-size: 120px!important;
+    }
+    /* Buttons */
+      #start_button,
+      #reset_button, 
+      #pause_button, 
+      #continue_button {
+        height: 60px;
+        width: 100px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    /* End Buttons */
+  }
+/* END TABLET */
+
+/* SMARTPHONE */
+@media only screen and (max-width: 414px) {
+  #timer {
+    margin-top: 15px;
+    width: 500px;
+    height: 200px;
+  }
+  #timer_clock {
+    width: 400px;
+    height: 110px;
+  }
+  #controls {
+    width: 400px;
+    height: 110px;
+    display: flex;
+  }
+  #p_time {
+    margin-top: -45px;
+    font-size: 120px!important;
+  }
+  /* Buttons */
+    #start_button,
+    #reset_button, 
+    #pause_button, 
+    #continue_button {
+      height: 50px;
+      width: 90px;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  /* End Buttons */
+}
+/* END SMARTPHONE */
+
+/* SMARTPHONE */
+  @media only screen and (max-width: 375px) {
+    #timer {
+      margin-top: 30px;
+      width: 500px;
+      height: 200px;
+    }
+    #timer_clock {
+      width: 350px;
+      height: 110px;
+    }
+    #controls {
+      width: 350px;
+      height: 110px;
+      display: flex;
+    }
+    #p_time {
+      margin-top: -45px;
+      font-size: 120px!important;
+    }
+    /* Buttons */
+      #start_button,
+      #reset_button, 
+      #pause_button, 
+      #continue_button {
+        height: 50px;
+        width: 90px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    /* End Buttons */
+  }
+/* END SMARTPHONE */

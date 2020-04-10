@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/typicons.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div id="home">
+        <nav class="navbar navbar-light navbar-expand-md fixed-top shadow d-flex justify-content-center align-items-center align-content-sm-end navigation-clean" style="background-color: #d5303e;">
+            <div class="container-fluid"><a class="navbar-brand" href="#" style="font-family: 'Roboto Slab', serif;font-size: 28px;color: #ffffff;">P<i class="typcn typcn-time" style="font-size: 39px;"></i>MODORO TIMER&nbsp;&nbsp;</a><button data-toggle="collapse" class="navbar-toggler"
+                    data-target="#navcol-1" style="background-color: #ffffff;"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-between" id="navcol-1">
+                    <ul class="nav navbar-nav d-sm-flex d-md-flex float-md-right ml-auto justify-content-sm-end align-items-sm-center">
+                        <li class="nav-item" role="presentation"></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" id="first-link" href="#" style="color: #ffffff;font-size: 23px;font-family: 'Roboto Slab', serif;background-color: transparent;">What is this?</a></li>
+                        <li class="nav-item" role="presentation" id="nav-item-link-2"><a class="nav-link" id="second-link" href="#" style="color: #ffffff;font-size: 23px;filter: invert(0%) sepia(0%);font-family: 'Roboto Slab', serif;margin-left: 5px;background-color: transparent;">Steps</a></li>
+                        <li class="nav-item"
+                            role="presentation" id="nav-item-link-3"><a class="nav-link" id="third-link" href="#" style="color: #ffffff;font-size: 23px;filter: invert(0%) sepia(0%);font-family: 'Roboto Slab', serif;margin-left: 5px;background-color: transparent;">Customize</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="photo-gallery">
+        <div class="container">
+            <div class="row d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center photos"
+                style="padding-top: 30px;">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-5 d-flex justify-content-center align-items-center item">
+                    <div id="timer" style="background-color: transparent;">
+                        <div class="d-xl-flex justify-content-xl-center align-items-xl-center" id="timer_clock" >
+                            <p id="p_time" class="d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 160px;color: #000000;height: 130px;"><span style="background-color: transparent;" id="minutes">25</span>:<span id="seconds">00</span></p>
+                        </div>
+                        <div id="controls"><button class="btn btn-success" type="button" id="start_button" onclick="startTemp()">Start</button><button class="btn btn-danger" type="button" id="reset_button" onclick="resetTemp()">Reset</button><button class="btn btn-warning" type="button" id="pause_button" onclick="pauseTemp()">Pause</button><button class="btn btn-primary" type="button" id="continue_button" onclick="continueTemp()">Continue</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-5 item"><a data-lightbox="photos" href="assets/img/building.jpg"><img class="img-fluid" src="assets/img/building.jpg"></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-10 d-sm-flex justify-content-sm-center align-items-sm-center item"><a data-lightbox="photos" href="assets/img/desk.jpg"></a>
+                    <p class="text-center d-sm-flex justify-content-sm-center align-items-sm-center" style="font-size: 19px;"><em>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" id="to-do-list" style="height: 566px;background-color: #204254;"></div>
+    <div class="footer-dark" style="background-color: #121B22;">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Company Name</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-github"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Company Name © 2017</p>
+            </div>
+        </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+</body>
+
+</html>
