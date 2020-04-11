@@ -40,7 +40,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3 col-xl-5 d-flex justify-content-center align-items-center item">
                     <div id="timer" style="background-color: transparent;">
                         <div class="d-xl-flex justify-content-xl-center align-items-xl-center" id="timer_clock" >
-                            <p id="p_time" class="d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 160px;color: #000000;height: 130px;"><span style="background-color: transparent;" id="minutes">25</span>:<span id="seconds">00</span></p>
+                            <p id="p_time" class="d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 160px;color: #000000;height: 130px;"><span style="background-color: transparent;" id="minutes">25</span><span id="colon">:</span><span id="seconds">00</span></p>
                         </div>
                         <div id="controls"><button class="btn btn-success" type="button" id="start_button" onclick="startTemp()">Start</button><button class="btn btn-danger" type="button" id="reset_button" onclick="resetTemp()">Reset</button><button class="btn btn-warning" type="button" id="pause_button" onclick="pauseTemp()">Pause</button><button class="btn btn-primary" type="button" id="continue_button" onclick="continueTemp()">Continue</button>
                         </div>
@@ -84,10 +84,16 @@
             </div>
         </footer>
     </div>
+    <!-- JQuery -->
     <script src="assets/js/jquery.min.js"></script>
+    <!-- Countdown -->
     <script src="assets/js/countdown.js"></script>
+    <!-- Bootstrap -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- LightBox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <!-- Sweet Alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 
 </html>
