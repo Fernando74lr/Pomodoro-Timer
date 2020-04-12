@@ -2,9 +2,11 @@
 let trigger,
 	seconds_pause = 0,
 	minutes_pause = 0,
-	seconds = 2, // Must be set on 60
-	minutes = 1, // Must be set on 24
+	seconds = 60, // Must be set on 60
+	minutes = 24, // Must be set on 24
 	pomodoro = 0; // 4th Pomodoro -> Long Break
+
+document.getElementById("quote_text").innerHTML = quotes[Math.floor(Math.random() * 25)];
 
 /* Start Functions */
 function startTemp() {
@@ -24,6 +26,8 @@ function countDownSeconds() {
 			document.getElementById("colon").innerHTML = ":";
 			seconds = 59;
 			minutes--;
+			// Change the quote
+			document.getElementById("quote_text").innerHTML = quotes[Math.floor(Math.random() * 25)];
 			if (minutes == 0) {
 				// Alert
 				oneMinuteLast("break");
@@ -113,6 +117,7 @@ function oneMinuteLast(nextStep) {
 		
 		Toast.fire({
 		icon: 'warning',
-		title: `One minute for ${nextStep}`
+		title: `<p style='color:white;'>One minute for ${nextStep}</p>`, // Soy un crack
+		background: '#204254'
 	})
 }
