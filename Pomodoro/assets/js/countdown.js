@@ -1,15 +1,23 @@
 // Variables
 let trigger,
+	start = 0,
 	seconds_pause = 0,
 	minutes_pause = 0,
-	seconds = 60, // Must be set on 60
-	minutes = 24, // Must be set on 24
+	seconds = 2, // Must be set on 60
+	minutes = 1, // Must be set on 24
 	pomodoro = 0; // 4th Pomodoro -> Long Break
 
-document.getElementById("quote_text").innerHTML = quotes[Math.floor(Math.random() * 25)];
+// Change the quote
+function changeQuote() {
+	$("#quote_text").fadeOut();
+	$("#quote_text").html(quotes[Math.floor(Math.random() * 25)]).fadeIn();
+}
 
-/* Start Functions */
-function startTemp() {
+changeQuote();
+
+// Start timer
+function startTimer() {
+	document.querySelector('#start_button').disabled = true;
 	trigger = setInterval(countDownSeconds, 1000);
 }
 
@@ -20,17 +28,17 @@ function countDownSeconds() {
 	if (seconds == 0 && minutes == 0) {
 		seconds = 0;
 		minutes = 0;
-		stopTemp();
+		stopTimer();
 	} else {
 		if (seconds == 0 && minutes > 0) {
 			document.getElementById("colon").innerHTML = ":";
 			seconds = 59;
 			minutes--;
 			// Change the quote
-			document.getElementById("quote_text").innerHTML = quotes[Math.floor(Math.random() * 25)];
+			changeQuote();
 			if (minutes == 0) {
 				// Alert
-				oneMinuteLast("break");
+				lastMinuteAlert("break");
 			}
 		} else {
 			seconds--;
@@ -42,27 +50,29 @@ function countDownSeconds() {
 }
 
 
-/* Stop Functions */
-function stopTemp() {
+// Stop Functions 
+function stopTimer() {
 	clearInterval(trigger);
 }
 
-/* Stop Functions */
-function resetTemp() {
-	stopTemp();
+// Reset Functions 
+function resetTimer() {
+	stopTimer();
 	trigger = setTimeout(reset, 1000);
 }
+
 function reset() {
+	document.querySelector('#start_button').disabled = false;
 	seconds = 60;
 	minutes = 24
 	document.getElementById("seconds").innerHTML = "00"; // Just label 0
 	document.getElementById("minutes").innerHTML = 25; // Just label 25
 }
 
-/* Continue Functions */
-function continueTemp() {
+// Continue Functions 
+function continueTimer() {
 	let time_split = new Array();
-	time_split = pauseTemp();
+	time_split = pauseTimer();
 	minutes_pause = time_split[0];
 	seconds_pause = time_split[1];
 	document.getElementById("seconds").innerHTML = seconds_pause;
@@ -74,7 +84,7 @@ function countDownPause() {
 	if (seconds_pause == 0 && minutes_pause == 0) {
 		seconds_pause = 0;
 		minutes_pause = 0;
-		stopTemp();
+		stopTimer();
 	} else {
 		if (seconds_pause == 0 && minutes_pause > 0) {
 			seconds_pause = 59;
@@ -88,8 +98,8 @@ function countDownPause() {
 	console.log(trigger);
 }
 
-function pauseTemp() {
-	stopTemp();
+function pauseTimer() {
+	stopTimer();
 	let timer = document.getElementById('p_time');
 	let time_split = new Array();
 	
@@ -101,8 +111,8 @@ function pauseTemp() {
 	return time_split;
 }
 
-/* Sweet Alert One minute last */
-function oneMinuteLast(nextStep) {
+// Sweet Alert One minute last 
+function lastMinuteAlert(nextStep) {
 	const Toast = Swal.mixin({
 		toast: true,
 		position: 'bottom-end',
