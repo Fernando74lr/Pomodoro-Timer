@@ -1,16 +1,18 @@
 // Variables
 let trigger,
-	start = 0,
-	break_on_course = false,
-	seconds = 2, // Must be set on 60
-	minutes = 0, // Must be set on 24
-	pomodoro = 0; // 4th Pomodoro -> Long Break
+	on_break = false,
+	seconds = 60, // Must be set on 60
+	minutes = 24, // Must be set on 24
+	pomodoro = 1; // 4th Pomodoro -> Long Break
 
 // Button
 let start_button = document.querySelector('#start_button'),
 	reset_button = document.querySelector('#reset_button'),
 	pause_button = document.querySelector('#pause_button'),
 	continue_button = document.querySelector('#continue_button');
+
+// Image
+let tomato = $("#tomato_img");
 
 // Change the quote
 function changeQuote() {
@@ -30,6 +32,9 @@ function startTimer() {
 	start_button.disabled = true;
 	reset_button.disabled = false;
 	pause_button.disabled = false;
+	minutes = 24;  // Must be set on 24
+	seconds = 60;  // Must be set on 60
+	tomato.attr("src", "assets/img/focused.png").fadeIn();
 	trigger = setInterval(countDownSeconds, 1000);
 }
 
@@ -39,13 +44,21 @@ function countDownSeconds() {
 	}
 	if (seconds == 0 && minutes == 0) {
 		stopTimer();
-		pomodoro++;
-		if (pomodoro < 4) {
-			breakConfirmation();	
-		}
-		if (pomodoro == 4){
-			pomodoro = 0;
-			longBreakConfirmation();
+		console.log('TIME STOPPED');
+		console.log('POMODORO: ' + pomodoro);
+		if (on_break) {
+			on_break = false;
+			backToWorkConfirmation();
+		} else {
+			if (pomodoro < 4) {
+				breakConfirmation();
+				pomodoro++;
+				on_break = true;
+			} else if (pomodoro == 4){
+				pomodoro = 1;
+				on_break = true;
+				longBreakConfirmation();
+			}
 		}
 	} else {
 		if (seconds == 0 && minutes > 0) {
@@ -83,8 +96,9 @@ function reset() {
 	reset_button.disabled = true;
 	pause_button.disabled = true;
 	continue_button.disabled = true;
-	seconds = 60;
-	minutes = 24
+	pomodoro = 1;
+	minutes = 24;  // Must be set on 24
+	seconds = 60;  // Must be set on 60
 	document.getElementById("colon").innerHTML = ":";
 	document.getElementById("seconds").innerHTML = "00"; // Just label 0
 	document.getElementById("minutes").innerHTML = 25; // Just label 25
@@ -95,8 +109,15 @@ function continueTimer() {
 	let time_split = new Array();
 	time_split = pauseTimer();
 	minutes = time_split[0];
-	seconds = time_split[1];
-	document.getElementById("colon").innerHTML = ":";
+	seconds = time_split[1].replace("0", "");
+	console.log(minutes);
+	console.log(seconds);
+	//seconds = 1;
+	if (seconds < 11) {
+		document.getElementById("colon").innerHTML = ":0";
+	} else {
+		document.getElementById("colon").innerHTML = ":";
+	}
 	document.getElementById("seconds").innerHTML = seconds;
 	document.getElementById("minutes").innerHTML = minutes;
 	pause_button.disabled = false;
@@ -110,10 +131,9 @@ function pauseTimer() {
 	continue_button.disabled = false;
 	let timer = document.getElementById('p_time');
 	let time_split = new Array();
-	
-	time_split = timer.outerText.split(':');
 
-	console.log(`Time -> ${time_split[0]}:${time_split[1]}`);
+	time_split = timer.outerText.split(':');
+	//console.log(`${time_split[0]}:${time_split[1]}`);
 	return time_split;
 }
 
@@ -121,16 +141,16 @@ function pauseTimer() {
 function startTimerBreak(option) {
 	switch (option) {
 		case 1:
-			minutes = 0; // Must be set on 4
-			seconds = 2; // Must be set on 60
+			minutes = 4; // Must be set on 4
+			seconds = 60; // Must be set on 60
 			break;
 		case 2:
 			minutes = 0; // Must be set on 9
-			seconds = 2; // Must be set on 60
+			seconds = 60; // Must be set on 60
 			break;
 		case 3:
-			minutes = 0; // Must be set on 14
-			seconds = 2; // Must be set on 60
+			minutes = 14; // Must be set on 14
+			seconds = 60; // Must be set on 60
 			break;
 		default:
 			minutes = 4;
@@ -177,6 +197,7 @@ function breakConfirmation() {
 			document.getElementById("seconds").innerHTML = "00"; // Just label 0
 			document.getElementById("minutes").innerHTML = "5"; // Just label 25
 			startTimerBreak(1);
+			tomato.attr("src", "assets/img/break.png");
 		}
 	});
 }
@@ -211,6 +232,7 @@ function longBreakConfirmation() {
 		document.getElementById("seconds").innerHTML = "00"; // Just label 0
 		document.getElementById("minutes").innerHTML = "10"; // Just label 10
 		startTimerBreak(2);
+		tomato.attr("src", "assets/img/long_break.png");
 	} else if (
 		/* Read more about handling dismissals below */
 		result.dismiss === Swal.DismissReason.cancel
@@ -219,6 +241,29 @@ function longBreakConfirmation() {
 		document.getElementById("seconds").innerHTML = "00"; // Just label 0
 		document.getElementById("minutes").innerHTML = "15"; // Just label 15
 		startTimerBreak(3);
+		tomato.attr("src", "assets/img/long_break.png");
 	}
 	})
+}
+
+// Sweet Alert for Get Back To Work
+function backToWorkConfirmation() {
+	Swal.fire(
+		'Back to Work',
+		'Confirm to start the next pomodoro',
+		'warning'
+	).then((result) => {
+		if (result.value) {
+			document.getElementById("colon").innerHTML = ":";
+			document.getElementById("seconds").innerHTML = "00"; // Just label 0
+			document.getElementById("minutes").innerHTML = "25"; // Just label 25
+			startTimer();
+			if (pomodoro == 1) {
+				tomato.attr("src", "assets/img/back_to_work.png");				
+			} else {
+				tomato.attr("src", "assets/img/focused.png");
+			}
+
+		}
+	});
 }
