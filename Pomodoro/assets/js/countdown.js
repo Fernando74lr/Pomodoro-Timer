@@ -12,7 +12,8 @@ let start_button = document.querySelector('#start_button'),
 	continue_button = document.querySelector('#continue_button');
 
 // Image
-let tomato = $("#tomato_img");
+let tomato = $("#tomato_img"),
+	img_detail = $("#img_detail");
 
 // Change the quote
 function changeQuote() {
@@ -34,7 +35,8 @@ function startTimer() {
 	pause_button.disabled = false;
 	minutes = 24;  // Must be set on 24
 	seconds = 60;  // Must be set on 60
-	tomato.attr("src", "assets/img/focused.png").fadeIn();
+	tomato.attr("src", "assets/img/focused.png");
+	img_detail.attr("href", "assets/img/focused.png");
 	trigger = setInterval(countDownSeconds, 1000);
 }
 
@@ -198,6 +200,7 @@ function breakConfirmation() {
 			document.getElementById("minutes").innerHTML = "5"; // Just label 25
 			startTimerBreak(1);
 			tomato.attr("src", "assets/img/break.png");
+			img_detail.attr("href", "assets/img/break.png");
 		}
 	});
 }
@@ -233,6 +236,7 @@ function longBreakConfirmation() {
 		document.getElementById("minutes").innerHTML = "10"; // Just label 10
 		startTimerBreak(2);
 		tomato.attr("src", "assets/img/long_break.png");
+		img_detail.attr("href", "assets/img/long_break.png");
 	} else if (
 		/* Read more about handling dismissals below */
 		result.dismiss === Swal.DismissReason.cancel
@@ -242,6 +246,7 @@ function longBreakConfirmation() {
 		document.getElementById("minutes").innerHTML = "15"; // Just label 15
 		startTimerBreak(3);
 		tomato.attr("src", "assets/img/long_break.png");
+		img_detail.attr("href", "assets/img/long_break.png");
 	}
 	})
 }
@@ -259,9 +264,11 @@ function backToWorkConfirmation() {
 			document.getElementById("minutes").innerHTML = "25"; // Just label 25
 			startTimer();
 			if (pomodoro == 1) {
-				tomato.attr("src", "assets/img/back_to_work.png");				
+				tomato.attr("src", "assets/img/back_to_work.png");
+				img_detail.attr("href", "assets/img/back_to_work.png");
 			} else {
 				tomato.attr("src", "assets/img/focused.png");
+				img_detail.attr("href", "assets/img/back_to_work.png");
 			}
 
 		}
