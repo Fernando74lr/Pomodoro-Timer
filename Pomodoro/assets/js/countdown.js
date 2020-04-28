@@ -151,7 +151,7 @@ function startTimerBreak(option) {
 			seconds = 60; // Must be set on 60
 			break;
 		case 2:
-			minutes = 0; // Must be set on 9
+			minutes = 9; // Must be set on 9
 			seconds = 60; // Must be set on 60
 			break;
 		case 3:

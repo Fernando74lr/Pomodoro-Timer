@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/to_do_styles.css">
 </head>
 
 <body>
@@ -64,7 +65,24 @@
             </div>
         </div>
     </div>
-    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" id="to-do-list" style="height: 566px;background-color: #204254;"></div>
+    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" id="to-do-list" style="height: 566px;background-color: #204254;">
+        <h1 id="to_do_title">TO-DO LIST</h1>
+        <!-- View Tasks -->
+        <div id="to_do_workspace">
+            <ul  id="task_list">
+                <h1 id="nothing_to_do">Nothing to do yet</h1>
+            </ul>
+        </div>
+        <!-- Add Task -->
+        <div id="add_task">
+            <div id="input_container">
+                <input type="text" maxlength="35" placeholder="Add a new short task" id="input_task"/>
+                <button type="button" onclick="addTask()" id="button_input_task"><i class="fas fa-plus"></i></button>
+            </div>
+            <br>
+            <img class="img-fluid" id="tomato_img_to_do" src="assets/img/to_do_list.png">
+        </div>
+    </div>
     <div class="footer-dark" style="background-color: #121B22;">
         <footer>
             <div class="container">
@@ -86,12 +104,12 @@
                         </ul>
                     </div>
                     <div class="col-md-6 item text">
-                        <h3>Company Name</h3>
-                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                        <h3>Description</h3>
+                        <p>This is a Pomodoro's timer bases on the Pomodoro's technique invented by <i>Francesco Cirillo</i>. This web-app is one of my projects in my <a href="https://www.100daysofcode.com/" target="_blank">#100DaysOfCode</a> challenge. I hope you enjoy it and better organize your time when you are working.</p>
                     </div>
-                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-github"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                    <div class="col item social"><a href="https://www.facebook.com/fercho.lopzz/" target="_blank"><i class="icon ion-social-facebook"></i></a><a href="https://twitter.com/Fernando_74_lr" target="_blank"><i class="icon ion-social-twitter"></i></a><a href="https://github.com/Fernando74lr" target="_blank"><i class="icon ion-social-github"></i></a><a href="https://www.instagram.com/fernando74lr/" target="_blank"><i class="icon ion-social-instagram"></i></a></div>
                 </div>
-                <p class="copyright">Company Name © 2017</p>
+                <p class="copyright">Made with <i class="icon ion-heart"></i> by Fernando López Ramírez</p>
             </div>
         </footer>
     </div>
@@ -101,8 +119,12 @@
     <script src="assets/js/quotes.js"></script>
     <!-- Countdown -->
     <script src="assets/js/countdown.js"></script>
+    <!-- To Do List -->
+    <script src="assets/js/to_do_list.js"></script>
     <!-- Bootstrap -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <!-- LightBox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
     <!-- Sweet Alert 2 -->
