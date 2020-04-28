@@ -1,0 +1,347 @@
+
+#to-do-list {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#to_do_title {
+    position: absolute;
+    top: 15px;
+    left: 270px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    color: white;
+}
+
+#to_do_workspace {
+    background-color: #d5303e;
+    border-radius: 5px;
+    overflow: auto;
+    margin-top: 50px;
+    width: 500px;
+    height: 445px;
+    display: flex;
+    justify-content: center;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d5303e; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #c51b29; 
+}
+
+#task_list {
+    list-style: none;
+}
+
+.tasks {
+    background-color: #ffe4c4c0;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-left: -40px;
+    padding-left: 15px;
+    border-radius: 5px;
+    width: 450px;
+    height: 37.5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.task_p {
+    background-color: transparent; /* must be transparent */
+    width: 400px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.delete_task {
+    margin-left: 5px;
+    font-size: 20px;
+    background-color: transparent;
+    border-color: transparent;
+    margin-top: -5px;
+    border-radius: 5px;
+    width: 40px;
+    padding-left: 6px;
+}
+
+#add_task {
+    margin-top: 25px;
+    margin-left: 20px;
+    background-color: transparent;
+    width: 500px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+#input_task {
+    font-size: 20px;
+    width: 420px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border-color: transparent;
+    margin-left: 5px;
+    padding-left: 10px;
+}
+
+#input_task::placeholder {
+    font-style: italic;
+}
+
+#button_input_task {
+    background-color: greenyellow;
+    border-color: transparent;
+    border-radius: 5px;
+    width: 60px;
+    height: 40px;
+}
+
+#nothing_to_do {
+    color:#ffffff;
+    font-family: 'Roboto Slab';
+    margin-top: 180px;
+    margin-left: -35px;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+#tomato_img_to_do {
+    height: 350px;
+    width: 350px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media only screen and (min-width: 941px) and (max-width: 1039px) {
+    #to_do_workspace {
+        width: 400px;
+        margin-top: 80px;
+        margin-left: 120px;
+    }
+    #add_task {
+        margin-top: 265px;
+    }
+    #input_task {
+        width: 370px; 
+    }
+    .tasks {
+        width: 370px;
+    }
+}
+
+@media only screen and (min-width: 837px) and (max-width: 940px) {
+    #to_do_workspace {
+        width: 470px;
+        margin-top: 80px;
+        margin-left: 90px;
+    }
+    #add_task {
+        margin-top: 265px;
+    }
+    #input_task {
+        width: 300px; 
+    }
+    .tasks {
+        width: 340px;
+    }
+}
+@media only screen and (min-width: 640px) and (max-width: 836px) {
+    #to_do_title {
+        position: absolute;
+        top: 15px;
+        left: 40px;
+        font-family: 'Roboto Slab', serif;
+        color: white;
+    }
+    #to_do_workspace {
+        width: 470px;
+        margin-top: 80px;
+        margin-left: 40px;
+    }
+    #add_task {
+        margin-top: 265px;
+    }
+    #input_task {
+        width: 230px; 
+    }
+    .tasks {
+        width: 270px;
+    }
+}
+@media only screen and (min-width: 620px) and (max-width: 639px) {
+    #to-do-list {
+        height: 1050px!important;
+        flex-direction: column;
+    }
+    #to_do_workspace {
+        width: 400px;
+        margin: 0px auto;
+        margin-top: 90px;
+        margin-bottom: 210px;
+    }
+    #input_task {
+        width: 330px;
+        margin-left: 100px;
+    }
+    #to_do_title {
+        left: 200px;
+    }
+    #tomato_img_to_do {
+        margin-left: 20%;
+    }
+    .tasks {
+        width: 380px;
+    }
+}
+@media only screen and (max-width: 619px) {
+    #to-do-list {
+        height: 1050px!important;
+        flex-direction: column;
+    }
+    #to_do_workspace {
+        width: 400px;
+        margin: 0px auto;
+        margin-top: 90px;
+        margin-bottom: 210px;
+    }
+    #input_task {
+        width: 330px;
+        margin-left: 65px;
+    }
+    #to_do_title {
+        left: 190px;
+    }
+    #tomato_img_to_do {
+        margin-left: 15%;
+    }
+    .tasks {
+        width: 370px;
+    }
+}
+@media only screen and (max-width: 539px) {
+    #to-do-list {
+        height: 840px!important;
+        width: 526px;
+    }
+    #to_do_workspace {
+        width: 340px;
+        margin-top: 90px;
+        margin-bottom: 120px;
+    }
+    #input_task {
+        width: 240px;
+        margin-left: 15%;
+    }
+    #to_do_title {
+        left: 160px;
+    }
+    /* AQUÍ ME QUEDÉ!!!! */
+    #add_task {
+        width: 190px;
+        margin-left: 15%;
+    }
+    #input_container {
+        margin-left: 140px;
+        width: 360px;
+    }
+    #tomato_img_to_do {
+        margin-left: 170px;
+        width: 350px;
+        height: 350px;
+    }
+    .tasks {
+        width: 330px;
+    }
+}
+@media only screen and (min-width: 376px) and (max-width: 420px) {
+    #to-do-list {
+        height: 840px!important;
+        width: 414px;
+    }
+    #to_do_workspace {
+        width: 340px;
+        margin-top: 90px;
+        margin-bottom: 120px;
+    }
+    #input_task {
+        width: 240px;
+        margin-left: 3%;
+    }
+    #to_do_title {
+        left: 95px;
+    }
+    #add_task {
+        width: 200px;
+        margin-left: 14%;
+    }
+    #input_container {
+        margin-left: 140px;
+        width: 360px;
+    }
+    #tomato_img_to_do {
+        margin-left: 110px;
+        width: 350px;
+        height: 350px;
+    }
+    .tasks {
+        width: 330px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    #to-do-list {
+        height: 650px!important;
+        width: 376px;
+    }
+    #to_do_workspace {
+        width: 340px;
+        margin-top: 90px;
+        margin-bottom: 30px;
+    }
+    #input_task {
+        width: 270px;
+        margin-left: 5%;
+    }
+    #to_do_title {
+        left: 75px;
+    }
+    /* AQUÍ ME QUEDÉ!!!! */
+    #add_task {
+        width: 110px;
+    }
+    #input_container {
+        width: 360px;
+    }
+    #tomato_img_to_do {
+        display: none;
+    }
+    .tasks {
+        width: 330px;
+    }
+}

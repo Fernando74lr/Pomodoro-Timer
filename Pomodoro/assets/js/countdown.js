@@ -15,6 +15,10 @@ let start_button = document.querySelector('#start_button'),
 let tomato = $("#tomato_img"),
 	img_detail = $("#img_detail");
 
+// Audio
+let last_minute_audio = document.querySelector("#last_minute_audio"),
+	time_is_up_audio = document.querySelector("#time_is_up_audio");
+
 // Change the quote
 function changeQuote() {
 	$("#quote_text").fadeOut();
@@ -45,9 +49,10 @@ function countDownSeconds() {
 		document.getElementById("colon").innerHTML = ":0";
 	}
 	if (seconds == 0 && minutes == 0) {
+		// Play notification time's up
+		time_is_up_audio.play();
+		// Alert
 		stopTimer();
-		console.log('TIME STOPPED');
-		console.log('POMODORO: ' + pomodoro);
 		if (on_break) {
 			on_break = false;
 			backToWorkConfirmation();
@@ -135,7 +140,6 @@ function pauseTimer() {
 	let time_split = new Array();
 
 	time_split = timer.outerText.split(':');
-	//console.log(`${time_split[0]}:${time_split[1]}`);
 	return time_split;
 }
 
@@ -147,7 +151,7 @@ function startTimerBreak(option) {
 			seconds = 60; // Must be set on 60
 			break;
 		case 2:
-			minutes = 0; // Must be set on 9
+			minutes = 9; // Must be set on 9
 			seconds = 60; // Must be set on 60
 			break;
 		case 3:
@@ -168,6 +172,9 @@ function startTimerBreak(option) {
 
 // Sweet Alert One minute last 
 function lastMinuteAlert(nextStep) {
+	// Play notification last minute
+	last_minute_audio.play();
+	// Alert
 	const Toast = Swal.mixin({
 		toast: true,
 		position: 'bottom-end',
