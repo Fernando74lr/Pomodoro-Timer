@@ -60,15 +60,15 @@
     padding-left: 15px;
     border-radius: 5px;
     width: 450px;
-    height: 37.5px;
     display: flex;
     flex-direction: row;
 }
 
-.task_p {
+.task_textarea {
     background-color: transparent; /* must be transparent */
+    border-color: transparent;
+    resize: none;
     width: 400px;
-    height: 30px;
     font-size: 20px;
 }
 

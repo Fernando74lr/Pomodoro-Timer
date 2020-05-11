@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/to_do_styles.css">
+    <link rel="stylesheet" href="assets/css/kanban.css">
 </head>
 
 <body>
@@ -66,23 +67,59 @@
         </div>
     </div>
     <div class="d-xl-flex justify-content-xl-center align-items-xl-center" id="to-do-list" style="height: 566px;background-color: #204254;">
-        <h1 id="to_do_title">TO-DO LIST</h1>
+        <h1 id="to_do_title">TO-DO LIST <button id="list_mode" type="button" onclick="list_mode()" style="border-color:transparent; width:20px; height:20px; background-color: red; border-radius: 100%;"></button></h1>
+        <!-- SIMPLE LIST -->
+        
         <!-- View Tasks -->
         <div id="to_do_workspace">
             <ul  id="task_list">
                 <h1 id="nothing_to_do">Nothing to do yet</h1>
             </ul>
         </div>
+        
+        <!-- KANBAN LIST -->
+
+        <div id="kanban">
+            <div id="kanban_workspace">
+                <div id="todo">
+                    <h1><u>TO-DO</u></h1>
+                    <div id="todo_content">
+                        <ul id="task_list_2">
+                            
+                        </ul>          
+                    </div>
+                </div>
+                <div id="doing">
+                    <h1><u>DOING</u></h1>
+                    <div id="doing_content>
+                        <ul id="task_list_2">
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div id="done">
+                    <h1><u>DONE</u></h1>
+                    <div id="done_content">
+                        <ul id="task_list_2">
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Add Task -->
         <div id="add_task">
             <div id="input_container">
-                <input type="text" maxlength="35" placeholder="Add a new short task" id="input_task"/>
+                <input type="text" maxlength="150" placeholder="Add a new short task" id="input_task"/>
                 <button type="button" onclick="addTask()" id="button_input_task"><i class="fas fa-plus"></i></button>
             </div>
             <br>
             <img class="img-fluid" id="tomato_img_to_do" src="assets/img/to_do_list.png">
         </div>
+
+
     </div>
+
     <div class="footer-dark" style="background-color: #121B22;">
         <footer>
             <div class="container">
@@ -121,6 +158,8 @@
     <script src="assets/js/countdown.js"></script>
     <!-- To Do List -->
     <script src="assets/js/to_do_list.js"></script>
+    <!-- Kanban List -->
+    <script src="assets/js/kanban.js"></script>
     <!-- Bootstrap -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- Font Awesome -->

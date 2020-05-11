@@ -1,0 +1,63 @@
+.hide {
+    display: none;
+}
+
+#kanban_workspace {
+    width: 1200px;
+    height: 550px;
+    background-color: transparent; /* must be transparent */
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.tasks_2 {
+    background-color: #ffe4c4c0;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-left: -40px;
+    padding-left: 15px;
+    border-radius: 5px;
+    width: 340px;
+    display: flex;
+    flex-direction: row;
+}
+
+.task_textarea_2 {
+    background-color: transparent; /* must be transparent */
+    border-color: transparent;
+    resize: none;
+    width: 400px;
+    font-size: 20px;
+}
+
+#task_list_2 {
+    list-style: none;
+}
+
+#todo, #doing, #done {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d5303e;
+    border-radius: 10px;
+    width: 380px;
+    height: 520px;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+#todo_content, #doing_content, #done_content {
+    background-color: transparent; /* must be transparent */
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:360px;
+    height:450px;
+}
