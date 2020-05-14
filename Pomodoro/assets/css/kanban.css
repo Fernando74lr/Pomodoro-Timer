@@ -6,7 +6,7 @@
     width: 1200px;
     height: 550px;
     background-color: transparent; /* must be transparent */
-    margin-top: 70px;
+    margin-top: -40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -44,12 +44,22 @@
     flex-direction: column;
     align-items: center;
     background-color: #d5303e;
+    margin-top: 50px;
     border-radius: 10px;
     width: 380px;
     height: 520px;
     -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+#nothing_to_do_2 {
+    color:#ffffff;
+    font-family: 'Roboto Slab';
+    margin-top: 180px;
+    margin-left: -35px;
+    font-style: italic;
+    font-size: 20px;
 }
 
 #todo_content, #doing_content, #done_content {
