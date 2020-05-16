@@ -14,7 +14,7 @@ function list_mode() {
         // KANBAN MODE
         to_do_list.css('flex-direction', 'column-reverse');
         to_do_list.css('height', '700px');
-        to_do_title.css('left', '590px');
+        to_do_title.css('left', '520px');
         to_do_workspace.hide();
         kanban.show();
         tomato_img_to_do.hide();

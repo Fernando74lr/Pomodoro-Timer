@@ -3,7 +3,18 @@
 let id_tasks = 0,
     id_tasks_2 = 0,
     tasks = 0,
-    tasks_2 = 0;
+    todo = 0,
+    doing = 0,
+    done = 0;
+
+
+document.querySelector('#to_do_title').addEventListener("click", function(){
+    list_mode();
+});
+
+let nothing_to_do_2_1 = $("#nothing_to_do_2_1");
+let nothing_to_do_2_2 = $("#nothing_to_do_2_2");
+let nothing_to_do_2_3 = $("#nothing_to_do_2_3");
 
 // Tag variables
 let input_task = $("#input_task"),
@@ -27,10 +38,10 @@ function addTask() {
             tasks++;
             $("#task_list").append(`
                 <li>
-                    <div class='tasks' style="height:${height_1}px" id="task_${id_tasks}" draggable='true' ondragstart='onDragStart(event);'>
+                    <div class='tasks' style="height:${height_1}px" id="task_${id_tasks}">
                     <textarea class="task_textarea" rows="4" cols="50" readonly="true" maxlength="88">${input_task.val()}</textarea>
                         <button type="button" id="button_delete_${id_tasks}" 
-                            class="delete_task" onclick="deleteTask(${id_tasks},false)">
+                            class="delete_task" onclick="deleteTask(${id_tasks})">
                             <i class="fas fa-trash"></i>
                         </button>
                     </div>
@@ -39,13 +50,13 @@ function addTask() {
             // Increment counter for next id
             id_tasks++;
         } else {
-            tasks_2++;
+            todo++;
             $("#task_list_2").append(`
-                <li>
-                    <div class='tasks_2' style="height:${height_2}px"" id="task_${id_tasks_2}_2" draggable='true' ondragstart='onDragStart(event);'>
-                        <textarea class="task_textarea_2" rows="4" cols="50" readonly="true" maxlength="88">${input_task.val()}</textarea>
+                <li class='move'>
+                    <div class='tasks_2 move' style="height:${height_2}px"" id="task_${id_tasks_2}_2" draggable='true' ondragstart='onDragStart(event);'>
+                        <textarea class="task_textarea_2 move" rows="4" cols="50" readonly="true" maxlength="88">${input_task.val()}</textarea>
                         <button type="button" id="button_delete_${id_tasks_2}" 
-                            class="delete_task" onclick="deleteTask(${id_tasks_2},true)">
+                            class="delete_task" onclick="deleteTaskKanban(${id_tasks_2})">
                             <i class="fas fa-trash"></i>
                         </button>
                     </div>
@@ -60,28 +71,55 @@ function addTask() {
     }
 
     // Show/Hide label about empty list
-    emptyList(tasks, tasks_2);
+    emptyList(tasks);
 }
 
-function deleteTask(id_task, kanban) {
-    (kanban) ? tasks_2-- : tasks--;
+function deleteTask(id_task) {
+    tasks--;
 
     let task_selected;
 
     // Identify the task
-    (kanban) ? task_selected = $(`#task_${id_task}_2`) : task_selected = $(`#task_${id_task}`);
+    task_selected = $(`#task_${id_task}`);
 
     // Remove selected task
     task_selected.remove();
 
     // Show/Hide label about empty list
-    emptyList(tasks, tasks_2);
+    emptyList(tasks);
 
 }
 
-function emptyList(tasks_1, tasks_2) {
+function deleteTaskKanban(id_task) {
+
+    let task_selected;
+
+    // Identify the task
+    task_selected = $(`#task_${id_task}_2`);
+    
+    let task = document.getElementById(`task_${id_task}_2`);
+    let card = task.parentElement.parentElement.id;
+    if (card == 'todo_content') card = 'task_list_2';
+    if (card == 'doing_content') card = 'task_list_2_2';
+    if (card == 'done_content') card = 'task_list_2_3';
+    if (card == 'task_list_2') todo--;
+    if (card == 'task_list_2_2') doing--;
+    if (card == 'task_list_2_3') done--;
+
+    console.log(card);
+    if (todo == 0) nothing_to_do_2_1.removeClass('hide');
+    if (doing == 0) nothing_to_do_2_2.removeClass('hide');
+    if (done == 0) nothing_to_do_2_3.removeClass('hide');
+
+    // Remove selected task
+    task_selected.remove();
+    card = '';
+
+}
+
+function emptyList(tasks_1) {
     let nothing_to_do = $("#nothing_to_do");
-    let nothing_to_do_2 = $('#nothing_to_do_2');
+
     (tasks_1 > 0) ? nothing_to_do.addClass('hide') : nothing_to_do.removeClass('hide');
-    (tasks_2 > 0) ? nothing_to_do_2.addClass('hide') : nothing_to_do_2.removeClass('hide');
+    (todo > 0) ? nothing_to_do_2_1.addClass('hide') : nothing_to_do_2_1.removeClass('hide');
 }
