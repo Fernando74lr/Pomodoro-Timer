@@ -42,11 +42,22 @@
     list-style: none;
 }
 
+#todo {
+    background-color: #e44258;
+}
+
+#doing {
+    background-color: #ffac2c;
+}
+
+#done {
+    background-color: #00d068;
+}
+
 #todo, #doing, #done {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #d5303e;
     margin-top: 100px;
     border-radius: 10px;
     width: 380px;
