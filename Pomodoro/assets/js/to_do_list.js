@@ -8,7 +8,7 @@ let id_tasks = 0,
     done = 0;
 
 
-document.querySelector('#to_do_title').addEventListener("click", function(){
+document.querySelector('#to_do_title').addEventListener("click", function() {
     list_mode();
 });
 
@@ -17,8 +17,7 @@ let nothing_to_do_2_2 = $("#nothing_to_do_2_2");
 let nothing_to_do_2_3 = $("#nothing_to_do_2_3");
 
 // Tag variables
-let input_task = $("#input_task"),
-    button_add = $("#input_task");
+let input_task = $("#input_task");
 
 // Listen for key Enter to execute addTask()
 document.addEventListener('keypress', function(e) {
@@ -53,8 +52,8 @@ function addTask() {
             todo++;
             $("#task_list_2").append(`
                 <li class='move'>
-                    <div class='tasks_2 move' style="height:${height_2}px"" id="task_${id_tasks_2}_2" draggable='true' ondragstart='onDragStart(event);'>
-                        <textarea class="task_textarea_2 move" rows="4" cols="50" readonly="true" maxlength="88">${input_task.val()}</textarea>
+                    <div class='tasks_2 move' style="height:${height_2}px" id="task_${id_tasks_2}_2" draggable='true' ondragstart='onDragStart(event);'>
+                        <textarea id="editable" class="task_textarea_2 move" rows="4" cols="50" readonly="true" maxlength="88">${input_task.val()}</textarea>
                         <button type="button" id="button_delete_${id_tasks_2}" 
                             class="delete_task" onclick="deleteTaskKanban(${id_tasks_2})">
                             <i class="fas fa-trash"></i>
@@ -87,7 +86,6 @@ function deleteTask(id_task) {
 
     // Show/Hide label about empty list
     emptyList(tasks);
-
 }
 
 function deleteTaskKanban(id_task) {
@@ -114,7 +112,6 @@ function deleteTaskKanban(id_task) {
     // Remove selected task
     task_selected.remove();
     card = '';
-
 }
 
 function emptyList(tasks_1) {
