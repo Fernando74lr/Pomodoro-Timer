@@ -24,7 +24,7 @@ function list_mode() {
         // NORMAL MODE
         to_do_list.css('flex-direction', 'row');
         to_do_list.css('height', '566px');
-        to_do_title.css('left', '170px');
+        to_do_title.css('left', '310px');
         to_do_title.html('TO-DO LIST');
         to_do_workspace.show();
         kanban.hide();
