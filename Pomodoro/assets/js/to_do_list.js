@@ -7,9 +7,22 @@ let id_tasks = 0,
     doing = 0,
     done = 0;
 
+// Edit tasks with double click
+document.addEventListener("dblclick", function(e) {
+    let element = document.getElementById(`${e.target.id}`);
+    if (element.getAttribute('data-edit') == 'edit') {
+        element.removeAttribute('readonly');
+        document.addEventListener('keypress', function(e) {
+            if (e.code == 'Enter') 
+            element.setAttribute('readonly', 'true');
+        });
+    }
+});
 
+// Do not let change to kanban mode
 document.querySelector('#to_do_title').addEventListener("click", function() {
-    list_mode();
+    let tomato = document.querySelector('#tomato_img');
+    if (tomato.width == 445) list_mode();
 });
 
 let nothing_to_do_2_1 = $("#nothing_to_do_2_1");
@@ -38,7 +51,7 @@ function addTask() {
             $("#task_list").append(`
                 <li>
                     <div class='tasks' style="height:${height_1}px" id="task_${id_tasks}">
-                    <textarea class="task_textarea" rows="4" cols="50" readonly="true" maxlength="88">${input_task.val()}</textarea>
+                    <textarea data-edit="edit" id="editable_${id_tasks}" class="task_textarea" rows="4" cols="50" readonly="true" maxlength="88">${input_task.val()}</textarea>
                         <button type="button" id="button_delete_${id_tasks}" 
                             class="delete_task" onclick="deleteTask(${id_tasks})">
                             <i class="fas fa-trash"></i>
@@ -53,7 +66,7 @@ function addTask() {
             $("#task_list_2").append(`
                 <li class='move'>
                     <div class='tasks_2 move' style="height:${height_2}px" id="task_${id_tasks_2}_2" draggable='true' ondragstart='onDragStart(event);'>
-                        <textarea id="editable" class="task_textarea_2 move" rows="4" cols="50" readonly="true" maxlength="88">${input_task.val()}</textarea>
+                        <textarea data-edit="edit" id="editable_${id_tasks_2}_2" class="task_textarea_2 move" rows="4" cols="50" readonly="true" maxlength="88">${input_task.val()}</textarea>
                         <button type="button" id="button_delete_${id_tasks_2}" 
                             class="delete_task" onclick="deleteTaskKanban(${id_tasks_2})">
                             <i class="fas fa-trash"></i>
