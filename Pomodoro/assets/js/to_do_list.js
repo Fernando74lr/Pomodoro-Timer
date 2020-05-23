@@ -7,6 +7,17 @@ let id_tasks = 0,
     doing = 0,
     done = 0;
 
+// Edit tasks with double click
+document.addEventListener("dblclick", function(e) {
+    let element = document.getElementById(`${e.target.id}`);
+    if (element.getAttribute('data-edit') == 'edit') {
+        element.removeAttribute('readonly');
+        document.addEventListener('keypress', function(e) {
+            if (e.code == 'Enter') 
+            element.setAttribute('readonly', 'true');
+        });
+    }
+});
 
 // Do not let change to kanban mode
 document.querySelector('#to_do_title').addEventListener("click", function() {
