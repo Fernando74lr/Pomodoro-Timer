@@ -38,41 +38,63 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navcol-1">
                     <ul class="nav navbar-nav d-sm-flex d-md-flex float-md-right ml-auto justify-content-sm-end align-items-sm-center">
                         <li class="nav-item" role="presentation"></li>
-                        <li class="nav-item" role="presentation"><!--<button class="nav-link" id="first-link" href="#" style="color: #ffffff;font-size: 23px;font-family:'Roboto Slab', serif;background-color: transparent;border-color: transparent;">What is this?</button>-->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-                    Launch demo modal
-                </button>
-                
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                        <div class="modal-body">
-                        ...
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+                        <li class="nav-item" role="presentation"><a class="nav-link" id="first-link" href="#" style="color: #ffffff;font-size: 23px;font-family:'Roboto Slab', serif;background-color: transparent;border-color: transparent;" type="button" data-toggle="modal" data-target="#whatIsThisModal">What is this?</a>
                         </li>
-                        <li class="nav-item" role="presentation" id="nav-item-link-2"><a class="nav-link" id="second-link" href="#" style="color: #ffffff;font-size: 23px;filter: invert(0%) sepia(0%);font-family: 'Roboto Slab', serif;margin-left: 5px;background-color: transparent;">Steps</a></li>
-                        <li class="nav-item"
-                            role="presentation" id="nav-item-link-3"><a class="nav-link" id="third-link" href="#" style="color: #ffffff;font-size: 23px;filter: invert(0%) sepia(0%);font-family: 'Roboto Slab', serif;margin-left: 5px;background-color: transparent;">Customize</a></li>
+                        <li class="nav-item" role="presentation" id="nav-item-link-2"><a class="nav-link" id="second-link" href="#" style="color: #ffffff;font-size: 23px;filter: invert(0%) sepia(0%);font-family: 'Roboto Slab', serif;margin-left: 5px;background-color: transparent;"  type="button" data-toggle="modal" data-target="#instructions">Instructions</a></li>
                     </ul>
                 </div>
             </div>  
         </nav>
     </div>
+
+    <!-- Modal - What is this? -->
+    <div class="modal fade" id="whatIsThisModal" tabindex="-1" role="dialog" aria-labelledby="whatIsThisModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="whatIsThisModalTitle"><b>What is this?</b></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <h6 class="modal-title" id="instructionsTitle"><b>Pomodoro Timer</b></h6>
+                <p>Is an easy way to organize your time for work using a looping pomodoro timer to boost your efficiency.</p>
+
+                <h6 class="modal-title" id="instructionsTitle"><b>Technique</b></h6>
+                <p>The Pomodoro Technique is a method to improve the administration of the time dedicated to an activity. <br><br> It was developed by Francesco Cirillo in the late 1980s. A timer is used to divide time into indivisible intervals, called pomodoros, of <u>25 minutes of activity</u>, followed by <u>5 minutes of rest</u>, with <u>longer pauses every four pomodoros</u>.</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Got it</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal - Instructios -->
+    <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="instructionsTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="instructionsTitle"><b>Instructions</b></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <h6 class="modal-title" id="instructionsTitle"><b>Pomodoro Timer</b></h6>
+                <p></p>
+
+                <h6 class="modal-title" id="instructionsTitle"><b>Technique</b></h6>
+                <p></p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Got it</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <div class="photo-gallery">
         <div class="container">
             <div class="row d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center photos"
