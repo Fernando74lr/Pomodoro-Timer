@@ -4,6 +4,12 @@
   border-color: transparent;
 }
 
+.img_modal, .img_modal_clock {
+  width:150px;
+  height:150px;
+  margin-left: 160px;
+}
+
 /* Blocks */
   #timer_clock {
     background-color: #ffffff;
@@ -230,6 +236,16 @@
 
 /* SMARTPHONE */
 @media only screen and (max-width: 414px) {
+  .img_modal {
+    width:150px;
+    height:150px;
+    margin-left: 110px;
+  }
+  .img_modal_clock {
+    width:130px;
+    height:130px;
+    margin-left: 120px;
+  }
   #timer {
     margin-top: 15px;
     width: 500px;

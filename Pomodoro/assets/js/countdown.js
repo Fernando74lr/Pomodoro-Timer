@@ -106,6 +106,8 @@ function reset() {
 	pomodoro = 1;
 	minutes = 24;  // Must be set on 24
 	seconds = 60;  // Must be set on 60
+	tomato.attr("src", "assets/img/long_break.png");
+	img_detail.attr("href", "assets/img/long_break.png");
 	document.getElementById("colon").innerHTML = ":";
 	document.getElementById("seconds").innerHTML = "00"; // Just label 0
 	document.getElementById("minutes").innerHTML = 25; // Just label 25
