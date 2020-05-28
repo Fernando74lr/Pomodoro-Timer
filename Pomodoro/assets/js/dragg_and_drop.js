@@ -32,7 +32,7 @@ function onDrop(event) {
     dropzone.appendChild(draggableElement);
     let card = dropzone.id;
     let parent = document.getElementById(`${card}`).parentElement.id;
-
+    
     if (parent == 'todo_content') nothing_to_do_2_1.addClass('hide');
     if (parent == 'doing_content') nothing_to_do_2_2.addClass('hide');
     if (parent == 'done_content') nothing_to_do_2_3.addClass('hide');
@@ -46,6 +46,8 @@ function onDrop(event) {
     if (todo == 0) nothing_to_do_2_1.removeClass('hide');
     if (doing == 0) nothing_to_do_2_2.removeClass('hide');
     if (done == 0) nothing_to_do_2_3.removeClass('hide');
+    
+    updateProgressBar();
 
     event
       .dataTransfer

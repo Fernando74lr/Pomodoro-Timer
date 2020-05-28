@@ -63,6 +63,7 @@ function addTask() {
             id_tasks++;
         } else {
             todo++;
+            updateProgressBar();
             $("#task_list_2").append(`
                 <li class='move'>
                     <div class='tasks_2 move' style="height:${height_2}px" id="task_${id_tasks_2}_2" draggable='true' ondragstart='onDragStart(event);'>
@@ -102,7 +103,7 @@ function deleteTask(id_task) {
 }
 
 function deleteTaskKanban(id_task) {
-
+    updateProgressBar();
     let task_selected;
 
     // Identify the task
