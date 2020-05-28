@@ -59,7 +59,7 @@ function updateProgressBar() {
 function allWorkDone() {
 	Swal.fire(
 		'Excellent Work!',
-		'You has completed all your tasks',
+		'You have completed all your tasks',
 		'success'
 	);
 }
