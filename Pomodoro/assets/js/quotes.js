@@ -1,4 +1,3 @@
-
 // Array of quotes
 let quotes = [
     'Time is the most valuable thing a person can spend (Theophrastus)',
