@@ -1,3 +1,4 @@
+
 // Variables
 let trigger,
 	on_break = false,
